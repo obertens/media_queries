@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #944646;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.content {
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+    padding: 0;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .brand {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.navbar .brand img {
+    margin-right: 0.5rem;
+}
+
+.navbar .burger {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.navbar nav a {
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: white;
+}
+
+.filters {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filters select {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.30rem 0.65rem;
+    cursor: pointer;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    flex-grow: 1;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.card {
+    background-color: hsl(0, 100%, 15%);
+    border: 1px solid hsl(0, 0%, 0%);
+    color: #f0f0f0;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 280px;
+    border-radius: 0.5rem;
+    align-items: center;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.7);
+}
+
+.card h2 {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    margin-bottom: 0.25rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    max-width: 5rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+footer {
+    background-color: hsl(0, 75%, 46%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+
+
+.mobile-footer {
+    display: none;
+    background-color: hsl(253, 100%, 15%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .content {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-bottom: 0;
+    }
+
+    .filters {
+        padding: 1rem;
+        z-index: 1;
+    }
+
+    .navbar .burger {
+        display: block;
+    }
+
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar nav.show {
+        display: flex;
+    }
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        flex: 1;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .card img {
+        height: 185px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: block;
+    }
+
+    .mobile-footer i {
+        color: white;
+        margin: 0 0.25rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .main-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .pagination {
+        justify-content: center;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 250px;
+        box-sizing: border-box;
+    }
+}
+
+.footer-content i {
+    color: white;
+    margin: 0 0.25rem;
+
+}
